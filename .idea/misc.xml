@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@react-native-community/datetimepicker/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@react-native-community/slider/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@react-native-firebase/app/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@react-native-firebase/crashlytics/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@react-native-firebase/messaging/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@react-native/gradle-plugin" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/@shopify/flash-list/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-application/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-asset/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-av/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-calendar/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-constants/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-dev-client/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-dev-launcher/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-dev-launcher/expo-dev-launcher-gradle-plugin" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-dev-menu-interface/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-dev-menu/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-device/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-file-system/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-font/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-health-connect/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-image-loader/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-image-picker/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-image/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-json-utils/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-keep-awake/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-linear-gradient/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-linking/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-localization/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-manifests/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-modules-core/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-network/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-notifications/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-splash-screen/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-system-ui/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-updates-interface/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo-video/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/expo/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-edge-to-edge/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-gesture-handler/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-google-fit/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-health-connect/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-keyboard-controller/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-mmkv/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-pager-view/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-reanimated/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-restart/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-safe-area-context/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-screens/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-svg/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-video/android" />
+    <file type="web" url="file://$PROJECT_DIR$/node_modules/react-native-webview/android" />
+  </component>
   <component name="KubernetesApiProvider"><![CDATA[{}]]></component>
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />
