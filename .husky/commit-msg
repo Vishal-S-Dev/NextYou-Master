@@ -1,0 +1,4 @@
+#export PATH="/Users/admin/.nvm/versions/node/v22.9.0/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node | tail -1)/bin:$PATH"
+
+pnpm commitlint --edit $1

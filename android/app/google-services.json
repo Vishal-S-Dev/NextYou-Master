@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "629694999788",
+    "project_id": "nextyou-dev",
+    "storage_bucket": "nextyou-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629694999788:android:fd6d0080b6c8f5a16b09c9",
+        "android_client_info": {
+          "package_name": "com.android.nextyou.development"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpjsgRbwk5xbbx5sYSjcyZiCnTp9_Rzv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

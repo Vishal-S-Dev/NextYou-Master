@@ -1,0 +1,59 @@
+import React from 'react';
+
+import { cleanup, screen, setup, waitFor } from '@/lib/test-utils';
+
+import type { LoginFormProps } from './login-form';
+import { LoginForm } from './login-form';
+
+afterEach(cleanup);
+
+const onSubmitMock: jest.Mock<LoginFormProps['onSubmit']> = jest.fn();
+
+describe('LoginForm Form ', () => {
+  it('renders correctly', async () => {
+    setup(<LoginForm />);
+    expect(await screen.findByTestId('form-title')).toBeOnTheScreen();
+  });
+
+  it('should display required error when values are empty', async () => {
+    const { user } = setup(<LoginForm />);
+
+    const button = screen.getByTestId('login-button');
+    expect(screen.queryByText(/Enter mobile number/i)).not.toBeOnTheScreen();
+    await user.press(button);
+    expect(await screen.findByText(/Enter mobile number/i)).toBeOnTheScreen();
+  });
+
+  it('should display matching error when mobile is invalid', async () => {
+    const { user } = setup(<LoginForm />);
+    const button = screen.getByTestId('login-button');
+    const mobileInput = screen.getByTestId('mobile-input');
+    await user.type(mobileInput, '7875');
+    await user.press(button);
+
+    expect(
+      await screen.findByText(/Enter valid mobile number/i)
+    ).toBeOnTheScreen();
+    expect(screen.queryByText(/Enter mobile number/i)).not.toBeOnTheScreen();
+  });
+
+  it('Should call LoginForm with correct values when values are valid', async () => {
+    const { user } = setup(<LoginForm onSubmit={onSubmitMock} />);
+
+    const button = screen.getByTestId('login-button');
+    const mobileInput = screen.getByTestId('mobile-input');
+
+    await user.type(mobileInput, '7875512881');
+    await user.press(button);
+    await waitFor(() => {
+      expect(onSubmitMock).toHaveBeenCalledTimes(1);
+    });
+    // expect.objectContaining({}) because we don't want to test the target event we are receiving from the onSubmit function
+    expect(onSubmitMock).toHaveBeenCalledWith(
+      {
+        mobile: '7875512881',
+      },
+      expect.objectContaining({})
+    );
+  });
+});
