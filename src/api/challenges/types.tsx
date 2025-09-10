@@ -45,5 +45,6 @@ export type UpdateTaskStatusVariables = {
   status: TaskStatus;
   userNotes?: string;
   answers: any;
+  answerImage?: File;
 };
 export type UpdateTaskStatusApiResponse = ApiResponse<Challenge>;

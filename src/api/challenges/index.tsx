@@ -105,7 +105,7 @@ export const fetchTasksByDay = async (taskID: string) => {
 };
 
 //  /api/challenge/{taskId}/status
-export const updateTaskStatus = async (
+export const updateTaskStatus0 = async (
   variables: UpdateTaskStatusVariables
 ) => {
   Logger.log('updateTaskStatus Params ::', variables);
@@ -119,6 +119,50 @@ export const updateTaskStatus = async (
       answers: variables.answers,
     },
   });
+  return res.data;
+};
+
+//Update task status in multipart form-data
+
+export const useTaskUpdateStatus0 = () => {
+  return createMutation<
+    UpdateTaskStatusApiResponse,
+    UpdateTaskStatusVariables,
+    AxiosError<UpdateTaskStatusApiResponse>
+  >({
+    mutationFn: async (variables) => updateTaskStatus(variables),
+  });
+};
+
+export const updateTaskStatus = async (
+  variables: UpdateTaskStatusVariables
+) => {
+  Logger.log('updateTaskStatus Params ::', variables);
+
+  const formData = new FormData();
+  formData.append('day', String(variables.day));
+  formData.append('status', variables.status);
+  formData.append('userNotes', variables.userNotes ?? '');
+
+  if (variables.answers) {
+    formData.append('answers', JSON.stringify(variables.answers));
+  }
+
+  if (variables.answers.imageUri) {
+    formData.append('answerImage', {
+      uri: variables.answers.imageUri,
+      name: 'photo.jpg',
+      type: 'image/jpeg',
+    } as any);
+  }
+
+  const res = await axiosInstance.patch(
+    `/challenge/${variables.taskId}/status`,
+    formData,
+    {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }
+  );
   return res.data;
 };
 

@@ -76,12 +76,24 @@ export default function Task1Screen() {
 
   const updateStatus = (taskId: string, data: Task1FormValues) => {
     updateTaskStatus(
-      { taskId: taskId, day: day, status: 'completed', answers: data },
+      {
+        taskId: taskId,
+        day: day,
+        status: 'completed',
+        answers: data,
+      },
       {
         onSuccess: (response) => {
           console.log('updateTaskStatus success:', response);
-          setCoinJarVisible(true);
           updateTaskByDay();
+          setCoinJarVisible(true);
+          <CoinJarPopupModal
+            visible={coinJarVisible}
+            coins={task?.points}
+            onClose={() => {
+              setCoinJarVisible(false);
+            }}
+          />;
         },
         onError: (error) => {
           const message = `updateTaskStatus failed, ${error.response?.data.message || error.message}`;
@@ -137,7 +149,11 @@ export default function Task1Screen() {
                 <ImagePickerButton
                   imageUri={value}
                   pickImage={() => {
-                    onPickImageRef.current = (uri) => onChange(uri);
+                    //onPickImageRef.current = (uri) => onChange(uri);
+                    onPickImageRef.current = (uri) => {
+                      console.log('📸 Picked Image URI:', uri);
+                      onChange(uri);
+                    };
                     bottomSheetRef.current?.open();
                   }}
                 />
@@ -189,20 +205,19 @@ export default function Task1Screen() {
             // loading={loading}
           />
         </View>
+        <CoinJarPopupModal
+          visible={coinJarVisible}
+          coins={task?.points}
+          onClose={() => {
+            setCoinJarVisible(false);
+          }}
+        />
+        <VideoPopupModal
+          visible={visible}
+          videoSource="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+          onClose={() => setVisible(false)}
+        />
       </ScrollView>
-      <VideoPopupModal
-        visible={visible}
-        videoSource="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-        onClose={() => setVisible(false)}
-      />
-      <CoinJarPopupModal
-        visible={coinJarVisible}
-        coins={task?.points}
-        onClose={() => {
-          setCoinJarVisible(false);
-        }}
-      />
-
       {/* Shared Bottom Sheet */}
       <ImagePickerBottomSheet
         ref={bottomSheetRef}

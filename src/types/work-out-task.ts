@@ -10,6 +10,7 @@ export type Challenge = {
   price: number;
   benefits: string[];
   sortOrder: number;
+  points: number;
   peoples?: string[];
   tasksByDay?: TasksByDay[];
   //benefits1: BenefitItem[];

@@ -1,7 +1,7 @@
 // /components/TaskList.js
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 
 import { useTaskUpdateStatus } from '@/api/challenges';
@@ -95,6 +95,11 @@ export function TaskList({ title, tasks, isTodayTask }: Props) {
         //   );
         //   return;
         // }
+
+        if (item.status === 'completed') {
+          Alert.alert('task already completed');
+          return;
+        }
         setSelectedItem(item);
         if (item.type === '1') {
           setVisible(true);
